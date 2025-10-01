@@ -10,7 +10,7 @@ module fully_connected2(
     output reg        done
 );
   integer i;
-  reg signed [15:0] in_mem [0:31];        // store 32 inputs
+  reg signed [15:0] in_mem [0:31];        
   reg signed [15:0] weight_mem [0:319];   // 10*32 weights
   reg signed [15:0] bias_mem   [0:9];      // 10 biases
   reg signed [31:0] acc;
@@ -19,7 +19,7 @@ module fully_connected2(
   reg [3:0]  neuron;   // neuron index 0..9
   reg        computing;
 
-  // Load weights and biases from single files
+  
   initial begin
     $readmemh("weights_l2.mem", weight_mem);  
     $readmemh("biases_l2.mem", bias_mem);    // 10 entries
@@ -38,7 +38,7 @@ module fully_connected2(
       done      <= 0;
       computing <= 0;
     end else if (start && !computing) begin
-      // Load 32 inputs
+     
       if (in_valid && in_cnt < 32) begin
         in_mem[in_cnt] <= in_data;
         in_cnt <= in_cnt + 1;

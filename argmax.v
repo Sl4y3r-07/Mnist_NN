@@ -21,7 +21,6 @@ module argmax(
     end else if (start) begin
       if (in_valid) begin
         if (count == 0) begin
-          // Initialize on first sample
           max_val   <= in_data;
           max_index <= 0;
           count     <= 1;
@@ -35,14 +34,13 @@ module argmax(
           end
           count <= count + 1;
           if (count == 9) begin
-            done <= 1;
+             done <= 1;
             $display("[%0t] Argmax DONE: Final Max = %0d at Index %0d", $time, max_val, max_index);
-            count <= 0;
+//            count <= 9;
+            
           end
         end
       end
-    end else begin
-      done <= 0;
-    end
+  end
   end
 endmodule

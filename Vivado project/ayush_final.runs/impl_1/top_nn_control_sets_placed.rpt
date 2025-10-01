@@ -1,0 +1,910 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
+| Date         : Wed Sep 17 12:58:56 2025
+| Host         : DESKTOP-NQSBP28 running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file top_nn_control_sets_placed.rpt
+| Design       : top_nn
+| Device       : xc7a35t
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |   832 |
+|    Minimum number of control sets                        |   832 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |  1638 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |   832 |
+| >= 0 to < 4        |     0 |
+| >= 4 to < 6        |     2 |
+| >= 6 to < 8        |     2 |
+| >= 8 to < 10       |     1 |
+| >= 10 to < 12      |     1 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |   819 |
+| >= 16              |     7 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              14 |           11 |
+| No           | No                    | Yes                    |              15 |            9 |
+| No           | Yes                   | No                     |               0 |            0 |
+| Yes          | No                    | No                     |           11472 |         3982 |
+| Yes          | No                    | Yes                    |             429 |          134 |
+| Yes          | Yes                   | No                     |               0 |            0 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++----------------+---------------------------------+------------------+------------------+----------------+--------------+
+|  Clock Signal  |          Enable Signal          | Set/Reset Signal | Slice Load Count | Bel Load Count | Bels / Slice |
++----------------+---------------------------------+------------------+------------------+----------------+--------------+
+|  clk_IBUF_BUFG | U_fc2/neuron[3]_i_1__0_n_0      | reset_IBUF       |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | U_fc2/arg_start_reg[0]          | reset_IBUF       |                2 |              4 |         2.00 |
+|  clk_IBUF_BUFG | U_arg/E[0]                      | reset_IBUF       |                1 |              6 |         6.00 |
+|  clk_IBUF_BUFG | U_fc1/neuron[6]_i_1_n_0         | reset_IBUF       |                2 |              7 |         3.50 |
+|  clk_IBUF_BUFG | U_fc2/in_cnt[6]_i_1__0_n_0      | reset_IBUF       |                3 |              9 |         3.00 |
+|  clk_IBUF_BUFG | U_flat/addr[9]_i_1_n_0          | reset_IBUF       |                5 |             10 |         2.00 |
+|  clk_IBUF_BUFG |                                 |                  |               11 |             14 |         1.27 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[770][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[88][14]_i_1_n_0    |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[780][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[781][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[779][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[77][14]_i_1_n_0    |                  |                9 |             14 |         1.56 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[775][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[78][14]_i_1_n_0    |                  |                8 |             14 |         1.75 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[79][14]_i_1_n_0    |                  |               12 |             14 |         1.17 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[776][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[783][14]_i_1_n_0   |                  |               11 |             14 |         1.27 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[85][14]_i_1_n_0    |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[83][14]_i_1_n_0    |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[773][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[774][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[777][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[782][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[7][14]_i_1_n_0     |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[87][14]_i_1_n_0    |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[89][14]_i_1_n_0    |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[778][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[84][14]_i_1_n_0    |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[82][14]_i_1_n_0    |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[80][14]_i_1_n_0    |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[81][14]_i_1_n_0    |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[86][14]_i_1_n_0    |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[90][14]_i_1_n_0    |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[91][14]_i_1_n_0    |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[97][14]_i_1_n_0    |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[98][14]_i_1_n_0    |                  |                7 |             14 |         2.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[96][14]_i_1_n_0    |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[8][14]_i_1_n_0     |                  |               10 |             14 |         1.40 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[95][14]_i_1_n_0    |                  |                8 |             14 |         1.75 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[92][14]_i_1_n_0    |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[99][14]_i_1_n_0    |                  |                8 |             14 |         1.75 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[94][14]_i_1_n_0    |                  |                8 |             14 |         1.75 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[93][14]_i_1_n_0    |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[9][14]_i_1_n_0     |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[412][14]_i_1_n_0   |                  |                8 |             14 |         1.75 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[416][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[417][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[41][14]_i_1_n_0    |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[397][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[3][14]_i_1_n_0     |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[402][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[404][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[399][14]_i_1_n_0   |                  |                9 |             14 |         1.56 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[39][14]_i_1_n_0    |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[400][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[398][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[413][14]_i_1_n_0   |                  |                7 |             14 |         2.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[405][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[396][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[409][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[414][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[421][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[401][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[422][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[403][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[415][14]_i_1_n_0   |                  |                9 |             14 |         1.56 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[406][14]_i_1_n_0   |                  |                8 |             14 |         1.75 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[411][14]_i_1_n_0   |                  |               10 |             14 |         1.40 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[418][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[40][14]_i_1_n_0    |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[419][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[420][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[407][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[408][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[410][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[425][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[433][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[430][14]_i_1_n_0   |                  |                7 |             14 |         2.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[439][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[428][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[434][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[429][14]_i_1_n_0   |                  |                9 |             14 |         1.56 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[440][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[438][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[442][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[441][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[426][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[436][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[445][14]_i_1_n_0   |                  |                7 |             14 |         2.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[423][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[437][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[43][14]_i_1_n_0    |                  |                7 |             14 |         2.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[42][14]_i_1_n_0    |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[435][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[443][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[448][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[446][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[447][14]_i_1_n_0   |                  |               11 |             14 |         1.27 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[424][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[427][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[432][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[444][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[449][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[431][14]_i_1_n_0   |                  |                9 |             14 |         1.56 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[44][14]_i_1_n_0    |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[450][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[455][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[458][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[462][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[464][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[451][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[46][14]_i_1_n_0    |                  |                7 |             14 |         2.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[467][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[470][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[456][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[465][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[468][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[454][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[472][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[45][14]_i_1_n_0    |                  |                8 |             14 |         1.75 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[471][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[473][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[466][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[452][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[475][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[453][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[469][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[457][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[476][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[460][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[477][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[478][14]_i_1_n_0   |                  |                7 |             14 |         2.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[474][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[459][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[479][14]_i_1_n_0   |                  |                9 |             14 |         1.56 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[463][14]_i_1_n_0   |                  |               10 |             14 |         1.40 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[461][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[0][14]_i_1_n_0     |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[100][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[101][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[109][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[102][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[112][14]_i_1_n_0   |                  |                7 |             14 |         2.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[104][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[106][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[103][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[105][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[110][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[111][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[10][14]_i_1_n_0    |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[108][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[114][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[115][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[116][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[113][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[107][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[119][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[127][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[123][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[124][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[130][14]_i_1_n_0   |                  |                7 |             14 |         2.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[132][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[135][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[12][14]_i_1_n_0    |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[137][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[138][14]_i_1_n_0   |                  |                8 |             14 |         1.75 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[120][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[140][14]_i_1_n_0   |                  |                8 |             14 |         1.75 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[118][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[125][14]_i_1_n_0   |                  |               10 |             14 |         1.40 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[129][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[128][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[131][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[136][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[139][14]_i_1_n_0   |                  |                7 |             14 |         2.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[13][14]_i_1_n_0    |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[134][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[133][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[126][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[121][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[11][14]_i_1_n_0    |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[122][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[141][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[142][14]_i_1_n_0   |                  |                8 |             14 |         1.75 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[117][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[143][14]_i_1_n_0   |                  |               12 |             14 |         1.17 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[148][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[150][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[15][14]_i_1_n_0    |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[152][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[161][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[163][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[151][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[146][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[155][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[165][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[157][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[162][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[168][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[169][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[166][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[167][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[14][14]_i_1_n_0    |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[16][14]_i_1_n_0    |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[156][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[159][14]_i_1_n_0   |                  |                7 |             14 |         2.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[170][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[171][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[144][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[153][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[160][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[145][14]_i_1_n_0   |                  |                8 |             14 |         1.75 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[154][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[164][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[149][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[158][14]_i_1_n_0   |                  |                9 |             14 |         1.56 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[147][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[174][14]_i_1_n_0   |                  |                9 |             14 |         1.56 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[181][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[183][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[184][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[196][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[185][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[17][14]_i_1_n_0    |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[192][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[198][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[180][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[175][14]_i_1_n_0   |                  |                9 |             14 |         1.56 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[179][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[177][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[176][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[189][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[193][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[188][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[186][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[191][14]_i_1_n_0   |                  |                9 |             14 |         1.56 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[187][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[194][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[18][14]_i_1_n_0    |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[173][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[182][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[172][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[197][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[190][14]_i_1_n_0   |                  |                7 |             14 |         2.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[178][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[195][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[214][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[203][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[212][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[21][14]_i_1_n_0    |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[221][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[200][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[219][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[20][14]_i_1_n_0    |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[206][14]_i_1_n_0   |                  |               13 |             14 |         1.08 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[210][14]_i_1_n_0   |                  |                7 |             14 |         2.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[222][14]_i_1_n_0   |                  |               10 |             14 |         1.40 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[215][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[223][14]_i_1_n_0   |                  |                8 |             14 |         1.75 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[213][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[218][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[224][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[204][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[216][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[220][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[199][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[225][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[207][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[208][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[211][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[1][14]_i_1_n_0     |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[205][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[19][14]_i_1_n_0    |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[209][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[201][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[202][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[217][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[226][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[252][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[253][14]_i_1_n_0   |                  |                8 |             14 |         1.75 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[235][14]_i_1_n_0   |                  |                7 |             14 |         2.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[229][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[236][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[234][14]_i_1_n_0   |                  |                7 |             14 |         2.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[237][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[227][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[238][14]_i_1_n_0   |                  |                8 |             14 |         1.75 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[231][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[233][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[243][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[241][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[244][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[22][14]_i_1_n_0    |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[247][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[23][14]_i_1_n_0    |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[245][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[232][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[249][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[230][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[242][14]_i_1_n_0   |                  |                7 |             14 |         2.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[248][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[250][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[251][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[228][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[24][14]_i_1_n_0    |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[239][14]_i_1_n_0   |                  |                7 |             14 |         2.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[240][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[246][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[255][14]_i_1_n_0   |                  |                8 |             14 |         1.75 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[263][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[264][14]_i_1_n_0   |                  |                7 |             14 |         2.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[276][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[259][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[27][14]_i_1_n_0    |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[260][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[266][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[25][14]_i_1_n_0    |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[268][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[267][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[26][14]_i_1_n_0    |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[270][14]_i_1_n_0   |                  |                8 |             14 |         1.75 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[272][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[273][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[265][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[275][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[277][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[256][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[262][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[269][14]_i_1_n_0   |                  |                8 |             14 |         1.75 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[279][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[257][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[258][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[271][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[274][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[254][14]_i_1_n_0   |                  |               10 |             14 |         1.40 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[278][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[261][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[293][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[290][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[295][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[294][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[296][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[297][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[291][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[298][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[281][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[299][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[284][14]_i_1_n_0   |                  |                7 |             14 |         2.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[301][14]_i_1_n_0   |                  |                8 |             14 |         1.75 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[302][14]_i_1_n_0   |                  |               10 |             14 |         1.40 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[303][14]_i_1_n_0   |                  |                9 |             14 |         1.56 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[282][14]_i_1_n_0   |                  |                8 |             14 |         1.75 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[285][14]_i_1_n_0   |                  |                7 |             14 |         2.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[288][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[2][14]_i_1_n_0     |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[300][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[304][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[280][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[283][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[286][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[287][14]_i_1_n_0   |                  |                8 |             14 |         1.75 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[29][14]_i_1_n_0    |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[28][14]_i_1_n_0    |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[305][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[289][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[292][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[306][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[332][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[326][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[311][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[314][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[315][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[316][14]_i_1_n_0   |                  |                7 |             14 |         2.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[31][14]_i_1_n_0    |                  |                7 |             14 |         2.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[317][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[310][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[323][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[325][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[312][14]_i_1_n_0   |                  |                7 |             14 |         2.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[313][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[320][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[322][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[324][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[328][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[32][14]_i_1_n_0    |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[318][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[319][14]_i_1_n_0   |                  |                7 |             14 |         2.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[321][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[329][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[307][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[308][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[309][14]_i_1_n_0   |                  |                7 |             14 |         2.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[327][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[30][14]_i_1_n_0    |                  |               11 |             14 |         1.27 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[330][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[331][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[334][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[339][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[347][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[338][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[344][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[356][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[349][14]_i_1_n_0   |                  |                9 |             14 |         1.56 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[340][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[345][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[348][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[333][14]_i_1_n_0   |                  |                9 |             14 |         1.56 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[354][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[351][14]_i_1_n_0   |                  |                8 |             14 |         1.75 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[335][14]_i_1_n_0   |                  |                7 |             14 |         2.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[343][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[346][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[342][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[355][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[33][14]_i_1_n_0    |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[357][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[359][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[34][14]_i_1_n_0    |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[350][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[337][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[35][14]_i_1_n_0    |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[336][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[352][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[341][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[358][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[353][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[373][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[376][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[383][14]_i_1_n_0   |                  |                8 |             14 |         1.75 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[382][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[365][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[360][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[368][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[369][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[372][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[381][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[377][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[367][14]_i_1_n_0   |                  |               12 |             14 |         1.17 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[37][14]_i_1_n_0    |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[384][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[36][14]_i_1_n_0    |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[379][14]_i_1_n_0   |                  |                7 |             14 |         2.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[371][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[361][14]_i_1_n_0   |                  |                7 |             14 |         2.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[362][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[363][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[378][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[385][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[364][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[380][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[386][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[370][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[374][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[375][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[366][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[390][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[394][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[393][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[388][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[38][14]_i_1_n_0    |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[395][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[391][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[389][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[392][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[387][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[486][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[500][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[501][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[502][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[483][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[503][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[489][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[48][14]_i_1_n_0    |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[504][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[505][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[480][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[491][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[49][14]_i_1_n_0    |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[494][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[482][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[47][14]_i_1_n_0    |                  |                9 |             14 |         1.56 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[490][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[485][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[493][14]_i_1_n_0   |                  |                8 |             14 |         1.75 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[495][14]_i_1_n_0   |                  |                9 |             14 |         1.56 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[487][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[481][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[492][14]_i_1_n_0   |                  |                9 |             14 |         1.56 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[496][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[4][14]_i_1_n_0     |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[499][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[484][14]_i_1_n_0   |                  |                9 |             14 |         1.56 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[488][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[497][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[498][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[519][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[515][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[516][14]_i_1_n_0   |                  |                7 |             14 |         2.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[51][14]_i_1_n_0    |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[527][14]_i_1_n_0   |                  |               10 |             14 |         1.40 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[523][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[520][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[524][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[528][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[529][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[52][14]_i_1_n_0    |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[530][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[514][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[512][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[517][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[518][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[508][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[506][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[521][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[509][14]_i_1_n_0   |                  |                7 |             14 |         2.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[522][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[511][14]_i_1_n_0   |                  |                7 |             14 |         2.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[513][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[525][14]_i_1_n_0   |                  |                8 |             14 |         1.75 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[510][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[50][14]_i_1_n_0    |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[507][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[526][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[552][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[556][14]_i_1_n_0   |                  |                7 |             14 |         2.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[557][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[540][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[54][14]_i_1_n_0    |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[548][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[535][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[541][14]_i_1_n_0   |                  |               10 |             14 |         1.40 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[542][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[544][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[546][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[543][14]_i_1_n_0   |                  |                9 |             14 |         1.56 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[547][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[539][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[531][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[53][14]_i_1_n_0    |                  |                7 |             14 |         2.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[549][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[550][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[551][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[537][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[534][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[533][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[553][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[532][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[545][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[538][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[536][14]_i_1_n_0   |                  |                7 |             14 |         2.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[554][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[555][14]_i_1_n_0   |                  |                7 |             14 |         2.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[565][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[563][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[559][14]_i_1_n_0   |                  |                9 |             14 |         1.56 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[569][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[575][14]_i_1_n_0   |                  |                9 |             14 |         1.56 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[572][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[578][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[561][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[56][14]_i_1_n_0    |                  |                7 |             14 |         2.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[567][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[574][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[55][14]_i_1_n_0    |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[566][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[560][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[576][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[577][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[579][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[558][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[57][14]_i_1_n_0    |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[580][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[570][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[571][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[581][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[568][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[573][14]_i_1_n_0   |                  |                7 |             14 |         2.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[564][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[582][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[562][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[58][14]_i_1_n_0    |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[593][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[583][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[592][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[600][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[601][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[605][14]_i_1_n_0   |                  |                7 |             14 |         2.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[585][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[588][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[590][14]_i_1_n_0   |                  |                9 |             14 |         1.56 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[596][14]_i_1_n_0   |                  |                8 |             14 |         1.75 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[587][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[599][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[598][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[602][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[604][14]_i_1_n_0   |                  |                7 |             14 |         2.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[594][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[595][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[584][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[606][14]_i_1_n_0   |                  |               11 |             14 |         1.27 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[59][14]_i_1_n_0    |                  |                7 |             14 |         2.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[597][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[607][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[589][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[591][14]_i_1_n_0   |                  |               10 |             14 |         1.40 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[5][14]_i_1_n_0     |                  |                9 |             14 |         1.56 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[586][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[603][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[608][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[609][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[621][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[616][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[622][14]_i_1_n_0   |                  |                7 |             14 |         2.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[612][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[611][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[617][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[618][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[619][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[61][14]_i_1_n_0    |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[623][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[624][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[615][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[610][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[626][14]_i_1_n_0   |                  |                7 |             14 |         2.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[620][14]_i_1_n_0   |                  |                8 |             14 |         1.75 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[60][14]_i_1_n_0    |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[613][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[630][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[62][14]_i_1_n_0    |                  |                8 |             14 |         1.75 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[631][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[632][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[633][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[629][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[634][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[635][14]_i_1_n_0   |                  |                8 |             14 |         1.75 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[625][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[628][14]_i_1_n_0   |                  |                7 |             14 |         2.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[614][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[627][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[641][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[639][14]_i_1_n_0   |                  |                9 |             14 |         1.56 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[646][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[64][14]_i_1_n_0    |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[63][14]_i_1_n_0    |                  |                9 |             14 |         1.56 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[643][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[651][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[647][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[650][14]_i_1_n_0   |                  |                7 |             14 |         2.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[648][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[652][14]_i_1_n_0   |                  |                7 |             14 |         2.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[644][14]_i_1_n_0   |                  |                7 |             14 |         2.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[649][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[654][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[657][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[636][14]_i_1_n_0   |                  |                8 |             14 |         1.75 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[656][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[640][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[638][14]_i_1_n_0   |                  |                9 |             14 |         1.56 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[653][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[645][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[658][14]_i_1_n_0   |                  |                7 |             14 |         2.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[637][14]_i_1_n_0   |                  |                8 |             14 |         1.75 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[659][14]_i_1_n_0   |                  |               10 |             14 |         1.40 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[642][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[655][14]_i_1_n_0   |                  |                8 |             14 |         1.75 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[677][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[669][14]_i_1_n_0   |                  |                7 |             14 |         2.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[67][14]_i_1_n_0    |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[66][14]_i_1_n_0    |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[682][14]_i_1_n_0   |                  |                9 |             14 |         1.56 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[684][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[683][14]_i_1_n_0   |                  |                8 |             14 |         1.75 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[661][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[662][14]_i_1_n_0   |                  |                8 |             14 |         1.75 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[664][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[673][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[678][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[666][14]_i_1_n_0   |                  |                8 |             14 |         1.75 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[663][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[660][14]_i_1_n_0   |                  |                7 |             14 |         2.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[676][14]_i_1_n_0   |                  |                8 |             14 |         1.75 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[674][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[680][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[665][14]_i_1_n_0   |                  |                7 |             14 |         2.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[679][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[681][14]_i_1_n_0   |                  |                8 |             14 |         1.75 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[670][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[667][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[672][14]_i_1_n_0   |                  |               10 |             14 |         1.40 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[675][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[65][14]_i_1_n_0    |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[671][14]_i_1_n_0   |                  |               11 |             14 |         1.27 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[668][14]_i_1_n_0   |                  |                8 |             14 |         1.75 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[696][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[694][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[697][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[689][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[695][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[698][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[699][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[693][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[692][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[685][14]_i_1_n_0   |                  |                7 |             14 |         2.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[69][14]_i_1_n_0    |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[6][14]_i_1_n_0     |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[691][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[701][14]_i_1_n_0   |                  |                7 |             14 |         2.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[703][14]_i_1_n_0   |                  |               12 |             14 |         1.17 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[705][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[686][14]_i_1_n_0   |                  |                9 |             14 |         1.56 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[687][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[702][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[688][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[704][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[68][14]_i_1_n_0    |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[690][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[700][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[706][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[707][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[708][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[709][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[729][14]_i_1_n_0   |                  |               10 |             14 |         1.40 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[723][14]_i_1_n_0   |                  |                8 |             14 |         1.75 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[71][14]_i_1_n_0    |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[714][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[730][14]_i_1_n_0   |                  |                8 |             14 |         1.75 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[70][14]_i_1_n_0    |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[715][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[711][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[716][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[722][14]_i_1_n_0   |                  |                7 |             14 |         2.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[717][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[726][14]_i_1_n_0   |                  |                8 |             14 |         1.75 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[727][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[728][14]_i_1_n_0   |                  |                8 |             14 |         1.75 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[720][14]_i_1_n_0   |                  |                9 |             14 |         1.56 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[713][14]_i_1_n_0   |                  |                7 |             14 |         2.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[724][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[712][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[721][14]_i_1_n_0   |                  |                7 |             14 |         2.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[725][14]_i_1_n_0   |                  |                9 |             14 |         1.56 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[719][14]_i_1_n_0   |                  |                8 |             14 |         1.75 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[72][14]_i_1_n_0    |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[718][14]_i_1_n_0   |                  |                9 |             14 |         1.56 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[731][14]_i_1_n_0   |                  |                7 |             14 |         2.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[710][14]_i_1_n_0   |                  |                8 |             14 |         1.75 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[732][14]_i_1_n_0   |                  |                7 |             14 |         2.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[735][14]_i_1_n_0   |                  |               11 |             14 |         1.27 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[752][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[746][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[747][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[740][14]_i_1_n_0   |                  |                8 |             14 |         1.75 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[750][14]_i_1_n_0   |                  |                9 |             14 |         1.56 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[742][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[736][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[741][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[74][14]_i_1_n_0    |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[749][14]_i_1_n_0   |                  |                9 |             14 |         1.56 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[745][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[734][14]_i_1_n_0   |                  |                9 |             14 |         1.56 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[739][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[751][14]_i_1_n_0   |                  |                8 |             14 |         1.75 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[737][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[73][14]_i_1_n_0    |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[733][14]_i_1_n_0   |                  |               11 |             14 |         1.27 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[738][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[744][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[748][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[743][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[772][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[755][14]_i_1_n_0   |                  |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[759][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[754][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[761][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[762][14]_i_1_n_0   |                  |                7 |             14 |         2.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[757][14]_i_1_n_0   |                  |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[753][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[758][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[75][14]_i_1_n_0    |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[756][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[763][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[764][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[766][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[765][14]_i_1_n_0   |                  |               10 |             14 |         1.40 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[767][14]_i_1_n_0   |                  |                8 |             14 |         1.75 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[769][14]_i_1_n_0   |                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[768][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[771][14]_i_1_n_0   |                  |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[760][14]_i_1_n_0   |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG | U_fc1/in_mem[76][14]_i_1_n_0    |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG |                                 | reset_IBUF       |                9 |             15 |         1.67 |
+|  clk_IBUF_BUFG | U_fc2/in_mem[10][14]_i_1__0_n_0 |                  |                5 |             15 |         3.00 |
+|  clk_IBUF_BUFG | U_fc1/E[0]                      | reset_IBUF       |                4 |             15 |         3.75 |
+|  clk_IBUF_BUFG | U_fc2/in_mem[15][14]_i_1__0_n_0 |                  |                5 |             15 |         3.00 |
+|  clk_IBUF_BUFG | U_fc2/in_mem[3][14]_i_1__0_n_0  |                  |                4 |             15 |         3.75 |
+|  clk_IBUF_BUFG | U_fc2/in_mem[20][14]_i_1__0_n_0 |                  |                5 |             15 |         3.00 |
+|  clk_IBUF_BUFG | U_fc2/in_mem[27][14]_i_1__0_n_0 |                  |                4 |             15 |         3.75 |
+|  clk_IBUF_BUFG | U_fc2/in_mem[1][14]_i_1__0_n_0  |                  |                5 |             15 |         3.00 |
+|  clk_IBUF_BUFG | U_fc2/in_mem[28][14]_i_1__0_n_0 |                  |                7 |             15 |         2.14 |
+|  clk_IBUF_BUFG | U_fc2/in_mem[4][14]_i_1__0_n_0  |                  |                4 |             15 |         3.75 |
+|  clk_IBUF_BUFG | U_fc2/in_mem[21][14]_i_1__0_n_0 |                  |                7 |             15 |         2.14 |
+|  clk_IBUF_BUFG | U_fc2/in_mem[19][14]_i_1__0_n_0 |                  |                7 |             15 |         2.14 |
+|  clk_IBUF_BUFG | U_fc2/in_mem[7][14]_i_1__0_n_0  |                  |                7 |             15 |         2.14 |
+|  clk_IBUF_BUFG | U_fc2/in_mem[8][14]_i_1__0_n_0  |                  |                5 |             15 |         3.00 |
+|  clk_IBUF_BUFG | U_fc2/in_mem[23][14]_i_1__0_n_0 |                  |                8 |             15 |         1.88 |
+|  clk_IBUF_BUFG | U_fc2/in_mem[16][14]_i_1__0_n_0 |                  |                3 |             15 |         5.00 |
+|  clk_IBUF_BUFG | U_fc2/in_mem[22][14]_i_1__0_n_0 |                  |                7 |             15 |         2.14 |
+|  clk_IBUF_BUFG | U_fc2/in_mem[2][14]_i_1__0_n_0  |                  |                3 |             15 |         5.00 |
+|  clk_IBUF_BUFG | U_fc2/in_mem[31][14]_i_1__0_n_0 |                  |                6 |             15 |         2.50 |
+|  clk_IBUF_BUFG | U_fc2/in_mem[18][14]_i_1__0_n_0 |                  |                4 |             15 |         3.75 |
+|  clk_IBUF_BUFG | U_fc2/in_mem[5][14]_i_1__0_n_0  |                  |                5 |             15 |         3.00 |
+|  clk_IBUF_BUFG | U_fc2/in_mem[6][14]_i_1__0_n_0  |                  |                5 |             15 |         3.00 |
+|  clk_IBUF_BUFG | U_fc2/in_mem[24][14]_i_1__0_n_0 |                  |                3 |             15 |         5.00 |
+|  clk_IBUF_BUFG | U_fc2/in_mem[14][14]_i_1__0_n_0 |                  |                8 |             15 |         1.88 |
+|  clk_IBUF_BUFG | U_fc2/in_mem[17][14]_i_1__0_n_0 |                  |                8 |             15 |         1.88 |
+|  clk_IBUF_BUFG | U_fc2/in_mem[25][14]_i_1__0_n_0 |                  |                3 |             15 |         5.00 |
+|  clk_IBUF_BUFG | U_fc2/in_mem[26][14]_i_1__0_n_0 |                  |                5 |             15 |         3.00 |
+|  clk_IBUF_BUFG | U_fc2/in_mem[29][14]_i_1__0_n_0 |                  |                4 |             15 |         3.75 |
+|  clk_IBUF_BUFG | U_fc2/in_mem[13][14]_i_1__0_n_0 |                  |                6 |             15 |         2.50 |
+|  clk_IBUF_BUFG | U_fc2/in_mem[9][14]_i_1__0_n_0  |                  |                8 |             15 |         1.88 |
+|  clk_IBUF_BUFG | U_fc2/in_mem[30][14]_i_1__0_n_0 |                  |                5 |             15 |         3.00 |
+|  clk_IBUF_BUFG | U_fc2/in_mem[11][14]_i_1__0_n_0 |                  |                5 |             15 |         3.00 |
+|  clk_IBUF_BUFG | U_fc2/in_mem[12][14]_i_1__0_n_0 |                  |                5 |             15 |         3.00 |
+|  clk_IBUF_BUFG | U_fc2/in_mem[0][14]_i_1__0_n_0  |                  |                3 |             15 |         5.00 |
+|  clk_IBUF_BUFG | U_fc1/out_data[15]_i_1_n_0      | reset_IBUF       |                4 |             16 |         4.00 |
+|  clk_IBUF_BUFG | U_fc2/out_data[15]_i_1__0_n_0   |                  |                6 |             16 |         2.67 |
+|  clk_IBUF_BUFG | U_arg/max_val[15]_i_1_n_0       | reset_IBUF       |                5 |             20 |         4.00 |
+|  clk_IBUF_BUFG | U_fc2/acc[31]_i_1__0_n_0        | reset_IBUF       |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | U_fc1/acc[31]_i_1_n_0           | reset_IBUF       |                5 |             32 |         6.40 |
+|  clk_IBUF_BUFG | U_fc1/in_cnt[9]_i_1_n_0         | reset_IBUF       |               29 |             92 |         3.17 |
+|  clk_IBUF_BUFG | U_flat/pixel_out[14]_i_1_n_0    | reset_IBUF       |               65 |            182 |         2.80 |
++----------------+---------------------------------+------------------+------------------+----------------+--------------+
+
+

@@ -2,9 +2,9 @@
 module top_nn(
     input         clk,
     input         reset,
-    // Control or I/O pins can be added here
-    output [3:0]  digit_out,    // final predicted digit (0-9)
-    output        valid_out     // high when digit_out is valid
+   
+    output [3:0]  digit_out,    
+    output        valid_out     
 );
   // Internal wires connecting modules
   wire [15:0] pixel;
@@ -65,7 +65,9 @@ module top_nn(
   // Output assignments
   assign digit_out = arg_index;
   assign valid_out = arg_done;
-
+  
+  
+  
   // FSM to sequence the operations
   reg [2:0] state;
   localparam IDLE   = 3'd0,
@@ -132,7 +134,6 @@ module top_nn(
         end
 
         DONE: begin
-          // stay here with outputs stable
           state <= DONE;
         end
       endcase

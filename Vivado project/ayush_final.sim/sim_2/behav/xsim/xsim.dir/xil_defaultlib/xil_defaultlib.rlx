@@ -1,0 +1,13 @@
+0.7
+2020.2
+May 22 2025
+00:13:55
+C:/Users/anany/Downloads/da-408/da-408/argmax.v,1758089569,verilog,,C:/Users/anany/ayush_final/ayush_final.srcs/sources_1/new/bram_loader.v,,argmax,,,D:/Xilinx/2025.1/Vivado/data/rsb/busdef,,,,,
+C:/Users/anany/Downloads/da-408/da-408/flatten.v,1758064340,verilog,,C:/Users/anany/Downloads/da-408/da-408/fully_connected1.v,,flatten,,,D:/Xilinx/2025.1/Vivado/data/rsb/busdef,,,,,
+C:/Users/anany/Downloads/da-408/da-408/fully_connected1.v,1757729488,verilog,,C:/Users/anany/Downloads/da-408/da-408/fully_connected2.v,,fully_connected1,,,D:/Xilinx/2025.1/Vivado/data/rsb/busdef,,,,,
+C:/Users/anany/Downloads/da-408/da-408/fully_connected2.v,1757729488,verilog,,C:/Users/anany/Downloads/da-408/da-408/relu.v,,fully_connected2,,,D:/Xilinx/2025.1/Vivado/data/rsb/busdef,,,,,
+C:/Users/anany/Downloads/da-408/da-408/loader.v,1758093641,verilog,,,,tb_top_nn,,,D:/Xilinx/2025.1/Vivado/data/rsb/busdef,,,,,
+C:/Users/anany/Downloads/da-408/da-408/relu.v,1757729488,verilog,,C:/Users/anany/Downloads/da-408/da-408/top_nn.v,,relu,,,D:/Xilinx/2025.1/Vivado/data/rsb/busdef,,,,,
+C:/Users/anany/Downloads/da-408/da-408/top_nn.v,1758091901,verilog,,C:/Users/anany/Downloads/da-408/da-408/loader.v,,top_nn,,,D:/Xilinx/2025.1/Vivado/data/rsb/busdef,,,,,
+C:/Users/anany/ayush_final/ayush_final.sim/sim_2/behav/xsim/glbl.v,1741209010,verilog,,,,glbl,,,,,,,,
+C:/Users/anany/ayush_final/ayush_final.srcs/sources_1/new/bram_loader.v,1758064325,verilog,,C:/Users/anany/Downloads/da-408/da-408/flatten.v,,bram_loader,,,D:/Xilinx/2025.1/Vivado/data/rsb/busdef,,,,,

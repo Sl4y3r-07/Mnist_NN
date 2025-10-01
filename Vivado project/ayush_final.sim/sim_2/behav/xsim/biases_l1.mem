@@ -1,0 +1,38 @@
+// Automatically generated weights for hardware_weights/biases_l1.mem
+// Original shape: (32,)
+// Flattened length: 32
+// Data range: [-0.136755, 0.254702]
+// Quantization: Q15 format (scale = 2^15)
+//
+0012
+0001
+fff8
+0009
+0001
+0006
+fffe
+0012
+0021
+fffb
+000f
+fff7
+fff8
+0002
+0018
+0001
+0005
+0015
+0020
+001c
+fff7
+ffee
+000e
+000f
+0015
+0006
+000a
+0001
+0005
+0007
+0007
+000b

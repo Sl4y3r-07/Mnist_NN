@@ -1,0 +1,16 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "D:/Xilinx/2025.1/Vivado/data/rsb/busdef" \
+"../../../../../Downloads/da-408/da-408/argmax.v" \
+"../../../../ayush_final.srcs/sources_1/new/bram_loader.v" \
+"../../../../../Downloads/da-408/da-408/flatten.v" \
+"../../../../../Downloads/da-408/da-408/fully_connected1.v" \
+"../../../../../Downloads/da-408/da-408/fully_connected2.v" \
+"../../../../../Downloads/da-408/da-408/relu.v" \
+"../../../../../Downloads/da-408/da-408/top_nn.v" \
+"../../../../../Downloads/da-408/da-408/loader.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

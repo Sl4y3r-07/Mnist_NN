@@ -1,5 +1,5 @@
 // fully_connected1.v
-// Fully connected layer: 784 inputs -> 128 outputs (Q15 fixed-point)
+
 
 module fully_connected1(
     input              clk,
@@ -13,19 +13,18 @@ module fully_connected1(
 );
 
   integer i;
-  reg signed [15:0] in_mem [0:783];        // 784 input pixels
-  reg signed [15:0] weight_mem [0:32*784-1]; // Flattened weights
-  reg signed [15:0] bias_mem   [0:31];    // Biases
+  reg signed [15:0] in_mem [0:783];       
+  reg signed [15:0] weight_mem [0:32*784-1]; 
+  reg signed [15:0] bias_mem   [0:31];   
 
   reg signed [31:0] acc;  
   reg [9:0]  in_cnt;    
   reg [6:0]  neuron;    
   reg        computing;
 
-  // Load weights and biases (flattened)
   initial begin
-    $readmemh("weights_l1.mem", weight_mem); // contains 128*784 entries
-    $readmemh("biases_l1.mem", bias_mem);      // contains 128 entries
+    $readmemh("weights_l1.mem", weight_mem); // contains 32*784 entries
+    $readmemh("biases_l1.mem", bias_mem);      // contains 32 entries
 
     $display("weights_l1.mem loaded into fully_connected1.v");
     $display("biases_l1.mem loaded into fully_connected1.v");
@@ -43,30 +42,30 @@ module fully_connected1(
       computing <= 0;
     end 
     else if (start && !computing) begin
-      // LOAD inputs
+      
       if (in_valid && in_cnt < 784) begin
         in_mem[in_cnt] <= in_data;
         in_cnt <= in_cnt + 1;
       end
       if (in_cnt == 784) begin
-        // Start computing
-        computing <= 1;
+        
+        computing <= 1;        // Start computing
         in_cnt    <= 0;
         neuron    <= 0;
         acc       <= 0;
       end
     end 
     else if (computing) begin
-      // Compute one neuron
-      if (in_cnt < 784) begin
+      
+      if (in_cnt < 784) begin              // Multiply accumulate Loop
         acc <= acc + in_mem[in_cnt] * weight_mem[neuron*784 + in_cnt];
         in_cnt <= in_cnt + 1;
         out_valid <= 0;
       end 
       else begin
-        // Add bias and output
+
         acc <= acc + (bias_mem[neuron] << 15);
-        out_data <= acc[30:15];   // Q30 → Q15
+        out_data <= acc[30:15];    
         out_valid <= 1;
         
         $display("[%0t] FC1: Neuron[%0d] Output = 0x%0h", $time, neuron, acc[30:15]);
@@ -76,7 +75,7 @@ module fully_connected1(
         in_cnt <= 0;
         neuron <= neuron + 1;
 
-        if (neuron == 31) begin    // need to look for this 
+        if (neuron == 31) begin  
           done      <= 1;
           computing <= 0;
         end 
